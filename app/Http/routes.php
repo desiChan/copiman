@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+ 
+Route::get('halo', function(){
+    return 'Hello world! Halo semuanya, selamat belajar Laravel.';
+});
+
+
+//Route::get('mmenu', 'MmenuController@index');
+
+Route::resource('mmenu', 'MmenuController');
+// ramadan pake Route::post('updatedata&{id}','MmenuController@update');
