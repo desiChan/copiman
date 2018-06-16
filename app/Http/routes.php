@@ -22,6 +22,9 @@ Route::get('halo', function(){
 
 
 //Route::get('mmenu', 'MmenuController@index');
+// ramadan pake Route::post('updatedata&{id}','MmenuController@update');
 
 Route::resource('mmenu', 'MmenuController');
-// ramadan pake Route::post('updatedata&{id}','MmenuController@update');
+Route::resource('mmodul', 'MmodulController');
+Route::resource('jnsticket', 'JnsticketController');
+

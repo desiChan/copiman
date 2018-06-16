@@ -18,6 +18,21 @@ class CreateCopimanTable extends Migration
 			$table->timestamps();
 			$table->softDeletes(); 
 		});
+		
+		Schema::create('mmodul', function (Blueprint $table) {
+			$table->string('modulid',5);
+			$table->string('modul_name',100);
+			$table->timestamps();
+			$table->softDeletes(); 
+		});
+		
+		Schema::create('jnsticket', function (Blueprint $table) {
+			$table->string('jnsticket',5);
+			$table->string('keterangan',100);
+			$table->string('otorisasi',1);
+			$table->timestamps();
+			$table->softDeletes(); 
+		});
     }
 
     /**
@@ -28,5 +43,7 @@ class CreateCopimanTable extends Migration
     public function down()
     {
           Schema::drop('mmenu');
+		  Schema::drop('mmodul');
+		  Schema::drop('mmodul');
     }
 }

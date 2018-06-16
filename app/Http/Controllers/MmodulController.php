@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Mmenu;
+use App\Mmodul;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests;
 //use Input;
 
-class MmenuController extends Controller
+class MmodulController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +17,12 @@ class MmenuController extends Controller
      */
     public function index()
     {
-	//	$mmenu = Mmenu::all();
-		$mmenu = Mmenu::orderBy('menuid', 'asc')->paginate(5);
-		return view('mmenu.index', compact('mmenu'));
+	//	$mmodul = Mmodul::all();
+		$mmodul = Mmodul::orderBy('modulid', 'asc')->paginate(5);
+		return view('mmodul.index', compact('mmodul'));
 		
-		//$data = Mmenu::get();
-		//return $mmenu;
+		//$data = Mmodul::get();
+		//return $mmodul;
 
     }
 
@@ -33,7 +33,7 @@ class MmenuController extends Controller
      */
     public function create()
     {
-        return view('mmenu.create');
+        return view('mmodul.create');
     }
 
     /**
@@ -45,13 +45,13 @@ class MmenuController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'menuid' => 'bail|required|size:5|unique:mmenu,menuid',
-            'menu_name' => 'required|max:100'
+            'modulid' => 'bail|required|max:5|unique:mmodul,modulid',
+            'modul_name' => 'required|max:100'
         ]);
 		
-		$mmenu = Mmenu::create($request->all());
+		$mmodul = Mmodul::create($request->all());
 
-        return redirect()->route('mmenu.index')->with('message', 'Menu berhasil dibuat!');
+        return redirect()->route('mmodul.index')->with('message', 'Modul berhasil dibuat!');
     }
 
     /**
@@ -62,8 +62,8 @@ class MmenuController extends Controller
      */
     public function show($id)
     {
-        $mmenu = Mmenu::findOrFail($id);
-        return view('mmenu.show', compact('mmenu'));
+        $mmodul = Mmodul::findOrFail($id);
+        return view('mmodul.show', compact('mmodul'));
     }
 
     /**
@@ -74,8 +74,8 @@ class MmenuController extends Controller
      */
     public function edit($id)
     {
-        $mmenu = Mmenu::findOrFail($id);
-        return view('mmenu.edit', compact('mmenu'));
+        $mmodul = Mmodul::findOrFail($id);
+        return view('mmodul.edit', compact('mmodul'));
     }
 
     /**
@@ -89,19 +89,19 @@ class MmenuController extends Controller
     {
 		
         $this->validate($request, [
-            'menu_name' => 'required|max:100'
+            'modul_name' => 'required|max:100'
         ]);
-		$mmenu = Mmenu::findOrFail($id)->update($request->all());
+		$mmodul = Mmodul::findOrFail($id)->update($request->all());
 		
-		return redirect()->route('mmenu.index')->with('message', 'Menu berhasil diubah!');
+		return redirect()->route('mmodul.index')->with('message', 'modul berhasil diubah!');
 		
 		/* alternatif
 		return $request;
-		$mmenu = Mmenu::findOrFail($id)->update($request->all());
-		$mmenu = Mmenu::where('id',$id)->update(['menu_name' => $request->menu_name ]);
-		ramadan pake $menuname = Input::get('menu_name');
-		ramadan echo $menuname; gak di pake
-		ramadan pake Mmenu::where('id',$id)->update(['menu_name' => $menuname ]);
+		$mmodul = Mmodul::findOrFail($id)->update($request->all());
+		$mmodul = Mmodul::where('id',$id)->update(['modul_name' => $request->modul_name ]);
+		ramadan pake $modulname = Input::get('modul_name');
+		ramadan echo $modulname; gak di pake
+		ramadan pake Mmodul::where('id',$id)->update(['modul_name' => $modulname ]);
         */
     }
 
@@ -113,7 +113,7 @@ class MmenuController extends Controller
      */
     public function destroy($id)
     {
-        $mmenu = Mmenu::findOrFail($id)->delete();
-        return redirect()->route('mmenu.index')->with('message', 'Menu berhasil dihapus!');
+        $mmodul = Mmodul::findOrFail($id)->delete();
+        return redirect()->route('mmodul.index')->with('message', 'Modul berhasil dihapus!');
     }
 }

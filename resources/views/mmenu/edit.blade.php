@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h4>Ubah Artikel</h4>
+<h4>Ubah Menu</h4>
 <form action="{{ route('mmenu.update', $mmenu->menuid) }}" method="post">
     {{csrf_field()}}
     {{ method_field('PUT') }}
