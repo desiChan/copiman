@@ -27,4 +27,5 @@ Route::get('halo', function(){
 Route::resource('mmenu', 'MmenuController');
 Route::resource('mmodul', 'MmodulController');
 Route::resource('jnsticket', 'JnsticketController');
+Route::resource('project', 'ProjectController');
 
