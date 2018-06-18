@@ -29,3 +29,7 @@ Route::resource('mmodul', 'MmodulController');
 Route::resource('jnsticket', 'JnsticketController');
 Route::resource('project', 'ProjectController');
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

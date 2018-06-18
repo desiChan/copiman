@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectsTable extends Migration
+class CreateMmenuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,12 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('project', function (Blueprint $table) {
-            $table->string('projectid',5);
-            $table->string('project_name',50);
-            $table->timestamps();
-        });
+		Schema::create('mmenu', function (Blueprint $table) {
+			$table->string('menuid',5);
+			$table->string('menu_name',100);
+			$table->timestamps();
+			$table->softDeletes(); 
+		});
     }
 
     /**
@@ -26,6 +27,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('project');
+           Schema::drop('mmenu');
     }
 }
