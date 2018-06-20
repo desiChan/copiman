@@ -22,12 +22,16 @@ Route::get('halo', function(){
 
 
 //Route::get('mmenu', 'MmenuController@index');
-// ramadan pake Route::post('updatedata&{id}','MmenuController@update');
+//ramadan pake Route::post('updatedata&{id}','MmenuController@update');
+Route::get('/ticket', 'LoadViewController@OpenViewTicket');
+//Route::get('/mmodul', 'LoadViewController@OpenViewMmodul');
+
 
 Route::resource('mmenu', 'MmenuController');
 Route::resource('mmodul', 'MmodulController');
 Route::resource('jnsticket', 'JnsticketController');
 Route::resource('project', 'ProjectController');
+Route::resource('maccess', 'MaccessController');
 
 
 Route::auth();

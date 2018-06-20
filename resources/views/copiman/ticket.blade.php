@@ -1,7 +1,5 @@
 @extends('copiman.index')
 @section('content')
-
-
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
@@ -408,68 +406,36 @@
                 <div class="main-content">
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
-                        <!-- ISI CONTENT PASTE -->
+                            
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="overview-wrap">
                                         <h2 class="title-1">Ticket</h2>
+                                        <button class="au-btn au-btn-icon au-btn--blue">
+                                            <i class="zmdi zmdi-plus"></i>add item</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12"><br></div>
                                 <div class="col-md-12"> 
-                                   <a href="{{ route('mmodul.create') }}" class="btn btn-primary btn-sm">Modul Baru</a>
-
-                                   @if ($message = Session::get('message'))
-                                   <div class="alert alert-success martop-sm">
-                                    <p>{{ $message }}</p>
+                                   <div class="panel panel-default">
+                                    <div class="panel-heading">Ini Canvas Form Tiket</div>
+                                    <div class="panel-body">Isi Form Tiket</div>
                                 </div>
-                                @endif
-
-                                <table class="table table-hover table-responsive martop-sm">
-                                    <thead>
-                                        <th>Modul Id</th>
-                                        <th>Modul Name</th>
-                                        <th>Action</th>
-                                    </thead>
-                                    <tbody> 
-                                        @foreach ($mmodul as $a)
-                                        <tr>
-                                            <td>{{ $a->modulid }}</td>
-                                            <td><a href="{{ route('mmodul.show', $a->modulid) }}">{{ $a->modul_name }}</a></td>
-                                            <td>
-                                                <form action="{{ route('mmodul.destroy', $a->modulid) }}" method="post">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
-                                                    <a href="{{ route('mmodul.edit', $a->modulid) }}" class="btn btn-warning btn-sm">Ubah</a>
-                                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                {{ $mmodul->links() }}
                             </div>
-                        </div>
-                        <!-- AKHIR ISI CONTENT PASTE -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="copyright">
+                                        <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- END MAIN CONTENT-->
+                <!-- END PAGE CONTAINER-->
             </div>
-            <!-- END MAIN CONTENT-->
-            <!-- END PAGE CONTAINER-->
+
         </div>
-
-    </div>
-
-
-    <!--      -->
-    @endsection
+        @endsection
