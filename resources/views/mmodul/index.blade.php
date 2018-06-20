@@ -408,7 +408,7 @@
                 <div class="main-content">
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
-                        <!-- ISI CONTENT PASTE -->
+                            <!-- ISI CONTENT PASTE -->
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="overview-wrap">
@@ -419,10 +419,10 @@
                             <div class="row">
                                 <div class="col-md-12"><br></div>
                                 <div class="col-md-12"> 
-                                   <a href="{{ route('mmodul.create') }}" class="btn btn-primary btn-sm">Modul Baru</a>
+                                <a href="{{ route('mmodul.create') }}" class="btn btn-primary btn-sm">Modul Baru</a>
 
-                                   @if ($message = Session::get('message'))
-                                   <div class="alert alert-success martop-sm">
+                                @if ($message = Session::get('message'))
+                                <div class="alert alert-success martop-sm">
                                     <p>{{ $message }}</p>
                                 </div>
                                 @endif
