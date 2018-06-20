@@ -23,7 +23,7 @@ Route::get('halo', function(){
 
 //Route::get('mmenu', 'MmenuController@index');
 //ramadan pake Route::post('updatedata&{id}','MmenuController@update');
-Route::get('/ticket', 'LoadViewController@OpenViewTicket');
+//Route::get('/ticket', 'LoadViewController@OpenViewTicket');
 //Route::get('/mmodul', 'LoadViewController@OpenViewMmodul');
 
 
