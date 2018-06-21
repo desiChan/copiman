@@ -419,7 +419,7 @@
                             <div class="row">
                                 <div class="col-md-12"><br></div>
                                 <div class="col-md-12"> 
-                                   <a href="{{ route('mmenu.create') }}" class="btn btn-info btn-sm">Menu Baru</a>
+                                   <a href="{{ url('createmmenu') }}" class="btn btn-info btn-sm">Menu Baru</a>
     
     @if ($message = Session::get('message'))
         <div class="alert alert-success martop-sm">

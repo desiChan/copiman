@@ -419,7 +419,7 @@
                             <div class="row">
                                 <div class="col-md-12"><br></div>
                                 <div class="col-md-12"> 
-                                <a href="{{ route('mmodul.create') }}" class="btn btn-primary btn-sm">Modul Baru</a>
+                                <a href="{{ url('createmmodul') }}" class="btn btn-primary btn-sm">Modul Baru</a>
 
                                 @if ($message = Session::get('message'))
                                 <div class="alert alert-success martop-sm">
