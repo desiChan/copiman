@@ -419,7 +419,7 @@
                             <div class="row">
                                 <div class="col-md-12"><br></div>
                                 <div class="col-md-12"> 
-                                <a href="{{ route('jnsticket.create') }}" class="btn btn-primary btn-sm">Jenis Ticket Baru</a>
+                                <a href="{{ url('createjnsticket') }}" class="btn btn-primary btn-sm">Jenis Ticket Baru</a>
                                 @if ($message = Session::get('message'))
                                     <div class="alert alert-success martop-sm">
                                         <p>{{ $message }}</p>

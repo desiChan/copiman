@@ -436,12 +436,12 @@
                                         @foreach ($project as $a)
                                             <tr>
                                                 <td>{{ $a->projectid }}</td>
-                                                <td><a href="{{ route('project.show', $a->projectid) }}">{{ $a->project_name }}</a></td>
+                                                <td><a href="{{ url('/projectdetail') }}&{{ $a->projectid }}">{{ $a->project_name }}</a></td>
                                                 <td>
                                                     <form action="{{ route('project.destroy', $a->projectid) }}" method="post">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <a href="{{ route('project.edit', $a->projectid) }}" class="btn btn-warning btn-sm">Ubah</a>
+                                                        <a href="{{ url('/projectedit') }}&{{ $a->projectid }}" class="btn btn-warning btn-sm">Ubah</a>
                                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                                     </form>
                                                 </td>

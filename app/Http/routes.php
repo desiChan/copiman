@@ -26,7 +26,10 @@ Route::get('halo', function(){
 //Route::get('/ticket', 'LoadViewController@OpenViewTicket');
 //Route::get('/mmodul', 'LoadViewController@OpenViewMmodul');
 
+Route::get('/projectedit&{id}', 'ProjectController@edit');
+Route::get('/projectdetail&{id}', 'ProjectController@show');
 Route::get('createproject', 'ProjectController@create');
+Route::get('createjnsticket', 'JnsticketController@create');
 Route::get('createmmenu', 'MmenuController@create');
 Route::get('createmmodul', 'MmodulController@create');
 Route::resource('mmenu', 'MmenuController');
