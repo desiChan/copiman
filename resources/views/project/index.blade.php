@@ -419,7 +419,7 @@
                             <div class="row">
                                 <div class="col-md-12"><br></div>
                                 <div class="col-md-12"> 
-                                <a href="{{ route('project.create') }}" class="btn btn-primary btn-sm">Project Baru</a>
+                                <a href="{{ url('createproject') }}" class="btn btn-primary btn-sm">Project Baru</a>
                                 @if ($message = Session::get('message'))
                                     <div class="alert alert-success martop-sm">
                                         <p>{{ $message }}</p>
