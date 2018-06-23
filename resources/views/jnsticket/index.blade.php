@@ -437,13 +437,13 @@
                                         @foreach ($jnsticket as $a)
                                             <tr>
                                                 <td>{{ $a->jnsticket }}</td>
-                                                <td><a href="{{ route('jnsticket.show', $a->jnsticket) }}">{{ $a->keterangan }}</a></td>
+                                                <td><a href="{{ url('/jnsticketdetail') }}&{{ $a->jnsticket }}">{{ $a->keterangan }}</a></td>
                                                 <td>{{ $a->otorisasi }}</td>
                                                 <td>
                                                     <form action="{{ route('jnsticket.destroy', $a->jnsticket) }}" method="post">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <a href="{{ route('jnsticket.edit', $a->jnsticket) }}" class="btn btn-warning btn-sm">Ubah</a>
+                                                        <a href="{{ url('/jnsticketedit') }}&{{ $a->jnsticket }}" class="btn btn-warning btn-sm">Ubah</a>
                                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                                     </form>
                                                 </td>

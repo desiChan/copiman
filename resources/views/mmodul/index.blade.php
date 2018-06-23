@@ -437,12 +437,12 @@
                                         @foreach ($mmodul as $a)
                                         <tr>
                                             <td>{{ $a->modulid }}</td>
-                                            <td><a href="{{ route('mmodul.show', $a->modulid) }}">{{ $a->modul_name }}</a></td>
+                                            <td><a href="{{ url('/mmoduldetail') }}&{{ $a->modulid }}">{{ $a->modul_name }}</a></td>
                                             <td>
                                                 <form action="{{ route('mmodul.destroy', $a->modulid) }}" method="post">
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
-                                                    <a href="{{ route('mmodul.edit', $a->modulid) }}" class="btn btn-warning btn-sm">Ubah</a>
+                                                    <a href="{{ url('/mmoduledit') }}&{{ $a->modulid }}" class="btn btn-warning btn-sm">Ubah</a>
                                                     <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                                 </form>
                                             </td>
