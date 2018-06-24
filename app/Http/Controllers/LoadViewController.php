@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+/*namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Mmodul;
@@ -14,11 +14,11 @@ class LoadViewController extends Controller
 		    }
 
 		public function OpenViewTicket(){
-			return view('copiman.ticket');
+			return view('ticket.index');
 		}
 
     	
-    	/*public function OpenViewMmodul(){
+    	public function OpenViewMmodul(){
 			$mmodul = Mmodul::orderBy('modulid', 'asc')->paginate(5);
 		    return view('mmodul.index', compact('mmodul'));
 		}*/

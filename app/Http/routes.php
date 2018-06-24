@@ -42,6 +42,7 @@ Route::get('createproject', 'ProjectController@create');
 Route::get('createjnsticket', 'JnsticketController@create');
 Route::get('createmmenu', 'MmenuController@create');
 Route::get('createmmodul', 'MmodulController@create');
+Route::get('createticket', 'TicketController@create');
 
 
 
@@ -50,6 +51,7 @@ Route::resource('mmodul', 'MmodulController');
 Route::resource('jnsticket', 'JnsticketController');
 Route::resource('project', 'ProjectController');
 Route::resource('maccess', 'MaccessController');
+Route::resource('ticket', 'TicketController');
 
 
 Route::auth();
