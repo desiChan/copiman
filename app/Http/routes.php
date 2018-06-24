@@ -30,12 +30,14 @@ Route::get('/projectdetail&{id}', 'ProjectController@show');
 Route::get('/jnsticketdetail&{id}', 'JnsticketController@show');
 Route::get('/mmoduldetail&{id}', 'MmodulController@show');
 Route::get('/mmenudetail&{id}', 'MmenuController@show');
+Route::get('/clientdetail&{id}', 'ClientController@show');
 
 
 Route::get('/projectedit&{id}', 'ProjectController@edit');
 Route::get('/jnsticketedit&{id}', 'JnsticketController@edit');
 Route::get('/mmoduledit&{id}', 'MmodulController@edit');
 Route::get('/mmenuedit&{id}', 'MmenuController@edit');
+Route::get('/clientedit&{id}', 'ClientController@edit');
 
 
 Route::get('createproject', 'ProjectController@create');
@@ -43,6 +45,8 @@ Route::get('createjnsticket', 'JnsticketController@create');
 Route::get('createmmenu', 'MmenuController@create');
 Route::get('createmmodul', 'MmodulController@create');
 Route::get('createticket', 'TicketController@create');
+Route::get('createclient', 'ClientController@create');
+
 
 
 
@@ -52,6 +56,7 @@ Route::resource('jnsticket', 'JnsticketController');
 Route::resource('project', 'ProjectController');
 Route::resource('maccess', 'MaccessController');
 Route::resource('ticket', 'TicketController');
+Route::resource('client', 'ClientController');
 
 
 Route::auth();
