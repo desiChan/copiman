@@ -444,9 +444,9 @@
                                         @foreach ($ticket as $a)
                                             <tr>
                                                 <td>{{ $a->ticketid }}</td>
-                                                <td>{{ $a->projectid }}</td>
-                                                <td>{{ $a->modulid }}</td>
-                                                <td>{{ $a->jnsticket }}</td>
+                                                <td>{{ $a->project_name }}</td>
+                                                <td>{{ $a->modul_name }}</td>
+                                                <td>{{ $a->ket_jnsticket }}</td>
                                                 <td>{{ $a->dateline_client }}</td>
                                                 <td>{{ $a->keterangan }}</td>
                                                 <td>{{ $a->user_create }}</td>
@@ -454,7 +454,7 @@
                                                 <td>{{ $a->user_handle }}</td>
                                                 <td>{{ $a->status_ticket }}</td>
                                                 <td>
-                                                    <form action="{{ route('project.destroy', $a->projectid) }}" method="post">
+                                                    <form action="{{ route('ticket.destroy', $a->projectid) }}" method="post">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
                                                         <a href="{{ url('/projectedit') }}&{{ $a->projectid }}" class="btn btn-warning btn-sm">Ubah</a>

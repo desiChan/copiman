@@ -29,6 +29,15 @@
                                                 <span class="help-block">{{ $errors->first('project_name') }}</span>
                                             @endif
                                         </div>
+                                        <div class="form-group {{ $errors->has('clientid') ? 'has-error' : '' }}">
+                                            <label for="clientid" class="control-label">Client</label>
+                                            <select class="form-control" name="clientid" id="client">
+                                                @foreach($client as $client)
+                                                    <option value="{{$client->clientid}}">{{$client->client_name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-info">Submit</button>
                                             <a href="{{ route('project.index') }}" class="btn btn-default">Back</a>

@@ -28,6 +28,7 @@
                                     <thead>
                                         <th>Project Id</th>
                                         <th>Project Name</th>
+                                        <th>Client</th>
                                         <th>Action</th>
                                     </thead>
                                     <tbody> 
@@ -35,6 +36,7 @@
                                             <tr>
                                                 <td>{{ $a->projectid }}</td>
                                                 <td><a href="{{ url('/projectdetail') }}&{{ $a->projectid }}">{{ $a->project_name }}</a></td>
+                                                <td>{{ $a->client_name }}</td>
                                                 <td>
                                                     <form action="{{ route('project.destroy', $a->projectid) }}" method="post">
                                                         {{ csrf_field() }}

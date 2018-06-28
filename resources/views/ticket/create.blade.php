@@ -412,7 +412,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="overview-wrap">
-                                        <h2 class="title-1">Tambah Project</h2>
+                                        <h2 class="title-1">Tambah Ticket</h2>
                                     </div>
                                 </div>
                             </div>
@@ -420,7 +420,7 @@
                                 <div class="col-md-12"><br></div>
                                 <div class="col-md-12"> 
                                 <h4>Ticket Baru</h4>
-                                    <form action="{{ route('project.store') }}" method="post">
+                                    <form name="createTicket" id="createTicket" role="form" action="{{ route('ticket.store') }}" method="post" enctype="multipart/form-data" files="true">
                                         {{csrf_field()}}
                                         <div class="form-group {{ $errors->has('ticketid') ? 'has-error' : '' }}">
                                             <label for="ticketid" class="control-label">Tikcet ID</label>
@@ -461,7 +461,11 @@
                                             <label for="keterangan" class="control-label">Keterangan</label>
                                             <textarea class="form-control" name="keterangan" placeholder="Keterangan" rows="5"></textarea>
                                         </div>
-                                        <div class="form-group {{ $errors->has('user_create') ? 'has-error' : '' }}">
+                                          <div class="form-group {{ $errors->has('keterangan') ? 'has-error' : '' }}">
+                                            <label for="gambar" class="control-label">Gambar</label><br/>
+                                            <input type="file" name="gambar" id="gambar" onchange="validate2(this.value)" class="btn-success">
+                                        </div>
+                                        <!--<div class="form-group {{ $errors->has('user_create') ? 'has-error' : '' }}">
                                             <label>User Create</label>
                                         </div>
                                         <div class="form-group {{ $errors->has('keterangan') ? 'has-error' : '' }}">
@@ -472,10 +476,10 @@
                                         </div>
                                         <div class="form-group {{ $errors->has('keterangan') ? 'has-error' : '' }}">
                                             <label>Status Ticket</label>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-info">Simpan</button>
-                                            <a href="{{ route('project.index') }}" class="btn btn-default">Kembali</a>
+                                            <a href="{{ route('ticket.index') }}" class="btn btn-default">Kembali</a>
                                         </div>
                                     </form>
                             </div>

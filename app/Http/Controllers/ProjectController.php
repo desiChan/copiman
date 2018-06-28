@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Client;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests;
-
+use Input;
 
 class ProjectController extends Controller
 {
@@ -23,7 +24,8 @@ class ProjectController extends Controller
 	
     public function index()
     {
-        $project = Project::orderBy('projectid', 'asc')->paginate(5);
+        $project = Project::join('client','project.clientid','=','client.clientid')
+                            ->orderBy('projectid', 'asc')->paginate(5);
         return view('project.index', compact('project'));
     }
 
@@ -34,7 +36,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('project.create');
+        $client = Client::select('client_name','clientid')->get();
+        return view('project.create',['client' => $client]);
     }
 
     /**
@@ -49,10 +52,14 @@ class ProjectController extends Controller
             'projectid' => 'bail|required|max:5|unique:project,projectid',
             'project_name' => 'required|max:50'
         ]);
-        
-        $project = Project::create($request->all());
 
-        return redirect()->route('project.index')->with('message', 'Project berhasil dibuat!');
+        $project = new Project;
+        $project->projectid = Input::get('projectid');
+        $project->project_name = Input::get('project_name');
+        $project->clientid = Input::get('clientid');
+        $project->save();
+
+       return redirect()->route('project.index')->with('message', 'Project berhasil dibuat!');
     }
 
     /**

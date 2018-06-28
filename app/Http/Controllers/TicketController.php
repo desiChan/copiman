@@ -1,15 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
 use App\Ticket;
+use App\TicketView;
 use App\Project;
 use App\Mmodul;
 use App\Jnsticket;
+use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests;
+use Input;
+use Carbon;
+use DB;
+use File;
 
 class TicketController extends Controller
 {
@@ -20,7 +24,7 @@ class TicketController extends Controller
      */
     public function index()
     {
-        $ticket = Ticket::orderBy('ticketid', 'asc')->paginate(5);
+        $ticket = TicketView::orderBy('ticketid', 'asc')->paginate(5);
         return view('ticket.index', compact('ticket'));
     }
 
@@ -45,7 +49,42 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ticketid = Input::get('ticketid');
+        $path = 'images/ticket/'.$ticketid;
+        File::makeDirectory($path,$mode = 0777, true, true);
+        $destionationPath = 'images/ticket/'.$ticketid;
+        $nama = $ticketid;
+      
+
+
+        $ticket = new Ticket;
+        $ticket->ticketid = Input::get('ticketid');
+        $ticket->projectid = Input::get('project_name');
+        $ticket->modulid = Input::get('modul_name');
+        $ticket->jnsticket = Input::get('jnsticket');
+        $ticket->dateline_client = Input::get('dateline_client');
+        $ticket->keterangan = Input::get('keterangan');
+        $ticket->rate = 0;
+        $ticket->user_create = "DESI";
+        $ticket->status_ticket = "1";
+        $ticket->dupd =  Carbon\Carbon::now();     
+        $ticket->save();
+
+
+        if(Input::hasFile('gambar')){
+                $file = Input::file('gambar');
+                $extensi = Input::file('gambar')->getClientOriginalExtension();
+                $filename = 'Image'.'.'.$extensi;
+                $file->move($destionationPath, $filename);
+
+                $images = new Image;
+                $images->ticketid = $ticketid;
+                $images->img_name = $filename;
+                $images->save();
+            
+        } 
+
+       return redirect()->route('ticket.index')->with('message', 'Ticket berhasil dibuat!');
     }
 
     /**
