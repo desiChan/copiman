@@ -441,8 +441,8 @@
                                                         <form action="{{ route('mmenu.destroy', $a->menuid) }}" method="post">
                                                             {{ csrf_field() }}
                                                             {{ method_field('DELETE') }}
-                                                            <a href="{{ url('/mmenuedit') }}&{{ $a->menuid }}" class="btn btn-warning btn-sm">Ubah</a>
-                                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                            <a href="{{ url('/mmenuedit') }}&{{ $a->menuid }}" class="btn btn-warning btn-sm">Edit</a>
+                                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -450,14 +450,6 @@
                                         </tbody>
                                     </table>
                                 	{{ $mmenu->links() }}
-                            </div>
-                        </div>
-                        <!-- AKHIR ISI CONTENT PASTE -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                                </div>
                             </div>
                         </div>
                     </div>
