@@ -454,10 +454,10 @@
                                                 <td>{{ $a->user_handle }}</td>
                                                 <td>{{ $a->status_ticket }}</td>
                                                 <td>
-                                                    <form action="{{ route('ticket.destroy', $a->projectid) }}" method="post">
+                                                    <form action="{{ route('ticket.destroy', $a->ticketid) }}" method="post">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <a href="{{ url('/projectedit') }}&{{ $a->projectid }}" class="btn btn-warning btn-sm">Ubah</a>
+                                                        <a href="{{ url('/ticketedit') }}&{{ $a->ticketid }}" class="btn btn-warning btn-sm">Ubah</a>
                                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                                     </form>
                                                 </td>
