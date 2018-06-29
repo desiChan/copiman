@@ -70,7 +70,9 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project = Project::findOrFail($id);
+		$project = Project::join('client','project.clientid','=','client.clientid')
+                            ->findOrFail($id);
+        //$project = Project::findOrFail($id);
         return view('project.show', compact('project'));
     }
 
@@ -82,8 +84,16 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $project = Project::findOrFail($id);
-        return view('project.edit', compact('project'));
+		
+		$project = Project::join('client','project.clientid','=','client.clientid')
+                            ->findOrFail($id);
+							
+        // $project = Project::findOrFail($id);
+		$client = Client::select('client_name','clientid')->get();
+        return view('project.edit', compact('project','client'));
+		
+		// $client = Client::select('client_name','clientid')->get();
+        // return view('project.create',['client' => $client]);
     }
 
     /**
