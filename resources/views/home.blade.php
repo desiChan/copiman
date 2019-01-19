@@ -226,7 +226,7 @@
         </aside>
         <!-- END MENU SIDEBAR-->
 
-        <!-- PAGE CONTAINER-->
+        {{-- <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
             <header class="header-desktop">
@@ -400,7 +400,7 @@
                     </div>
                 </div>
             </header>
-            <!-- HEADER DESKTOP-->
+            <!-- HEADER DESKTOP--> --}}
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
@@ -460,7 +460,7 @@
                                                 <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,086</h2>
+                                                <h2>1,08974346</h2>
                                                 <span>this week</span>
                                             </div>
                                         </div>
@@ -470,6 +470,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="col-sm-6 col-lg-3">
                                 <div class="overview-item overview-item--c4">
                                     <div class="overview__inner">

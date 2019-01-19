@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "629d336385a176cae7c4fc6a693db110",
+    "content-hash": "f4b6725b1083e0119ed6fc802be14728",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -159,6 +159,48 @@
                 "string"
             ],
             "time": "2018-01-09T20:05:19+00:00"
+        },
+        {
+            "name": "ghanem/rating",
+            "version": "1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AbdullahGhanem/rating.git",
+                "reference": "2709cf334f0daabb2317b8f5fa8dc3d864b87e60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AbdullahGhanem/rating/zipball/2709cf334f0daabb2317b8f5fa8dc3d864b87e60",
+                "reference": "2709cf334f0daabb2317b8f5fa8dc3d864b87e60",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ghanem\\Rating\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "abdullah ghanem",
+                    "email": "3bdullah.ghanem@gmail.com"
+                }
+            ],
+            "description": "Rating syetem for Laravel 5",
+            "keywords": [
+                "Ratable",
+                "Rating",
+                "laravel"
+            ],
+            "time": "2017-04-25T22:42:00+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -697,16 +739,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.29.2",
+            "version": "1.31.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "ed6aa898982f441ccc9b2acdec51490f2bc5d337"
+                "reference": "385780c8ca2dbfd25452666e3f55e8dc1df58c41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ed6aa898982f441ccc9b2acdec51490f2bc5d337",
-                "reference": "ed6aa898982f441ccc9b2acdec51490f2bc5d337",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/385780c8ca2dbfd25452666e3f55e8dc1df58c41",
+                "reference": "385780c8ca2dbfd25452666e3f55e8dc1df58c41",
                 "shasum": ""
             },
             "require": {
@@ -718,6 +760,13 @@
                 "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Carbon\\Laravel\\ServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "": "src/"
@@ -741,7 +790,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-05-29T15:23:46+00:00"
+            "time": "2018-06-25T13:15:16+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -1134,7 +1183,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.4.11",
+            "version": "v3.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -1846,6 +1895,58 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "willvincent/laravel-rateable",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willvincent/laravel-rateable.git",
+                "reference": "ff56cc40284ddfb426945b7524c19378e439c2ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willvincent/laravel-rateable/zipball/ff56cc40284ddfb426945b7524c19378e439c2ba",
+                "reference": "ff56cc40284ddfb426945b7524c19378e439c2ba",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/commands"
+                ],
+                "psr-4": {
+                    "willvincent\\Rateable\\": "src/Rateable"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Will Vincent",
+                    "email": "tcindie@gmail.com"
+                }
+            ],
+            "description": "Allows multiple models to be rated with a fivestar like system.",
+            "keywords": [
+                "Rating",
+                "fivestar",
+                "laravel",
+                "laravel 5",
+                "rateable",
+                "vote"
+            ],
+            "time": "2017-10-10T14:21:01+00:00"
         }
     ],
     "packages-dev": [

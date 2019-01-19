@@ -48,9 +48,9 @@
                         <img src="assets/images/icon/avatar-big-01.jpg" alt="John Doe" />
                     </div>
                     <h4 class="name">john doe</h4>
-                    <a href="#">Sign out</a>
+                    <a href="{{ url('logout') }}">Sign out</a>
                 </div>
-                <nav class="navbar-sidebar2">
+                <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
@@ -133,8 +133,22 @@
                                             <i class="fas fa-unlock-alt"></i>Approval QA</a>
                                     </li>
 									<li>
-                                        <a href="{{ route('ticket.index') }}">
+                                        <a href="{{ route('update_ticket.index') }}">
                                             <i class="fas fa-unlock-alt"></i>Update Ticket Status</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-inbox"></i>Log Auditrial
+                                    <span class="arrow">
+                                        <i class="fas fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="{{ route('log.index') }}">
+                                            <i class="fas fa-sign-in-alt"></i>Input Log Auditrial</a>
                                     </li>
                                 </ul>
                             </li>
@@ -302,7 +316,7 @@
                             <img src="assets/images/icon/avatar-big-01.jpg" alt="John Doe" />
                         </div>
                         <h4 class="name">john doe</h4>
-                        <a href="#">Sign out</a>
+                        <a href="{{ url('logout') }}">Sign out</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
@@ -445,11 +459,7 @@
 	<section>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </section>

@@ -17,6 +17,10 @@ use File;
 
 class TicketController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +41,7 @@ class TicketController extends Controller
     {
         $project = Project::select('project_name','projectid')->get();
         $modul = Mmodul::select('modul_name','modulid')->get();
-        $jnsticket = Jnsticket::select('keterangan','jnsticket')->get();
+        $jnsticket = Jnsticket::select('keterangan','jns_ticket')->get();
         return view('ticket.create',['project' => $project,'modul' => $modul,'jnsticket' => $jnsticket]);
     }
 
@@ -61,12 +65,12 @@ class TicketController extends Controller
         $ticket->ticketid = Input::get('ticketid');
         $ticket->projectid = Input::get('project_name');
         $ticket->modulid = Input::get('modul_name');
-        $ticket->jnsticket = Input::get('jnsticket');
+        $ticket->jnsticket = Input::get('jns_ticket');
         $ticket->dateline_client = Input::get('dateline_client');
         $ticket->keterangan = Input::get('keterangan');
         $ticket->rate = 0;
         $ticket->user_create = "DESI";
-        $ticket->status_ticket = "1";
+        $ticket->status_ticket = "0";
         $ticket->dupd =  Carbon\Carbon::now();     
         $ticket->save();
 
@@ -95,7 +99,8 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $ticket = Ticket::findOrFail($id);
+        return view('ticket.show', compact('ticket'));
     }
 
     /**
@@ -106,7 +111,8 @@ class TicketController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ticket = Ticket::findOrFail($id);
+        return view('ticket.edit', compact('ticket'));
     }
 
     /**
@@ -118,7 +124,12 @@ class TicketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /*$this->validate($request, [
+            'project_name' => 'required|max:50'
+        ]);
+        $project = Project::findOrFail($id)->update($request->all());
+        
+        return redirect()->route('project.index')->with('message', 'Project berhasil diubah!');*/
     }
 
     /**
@@ -129,6 +140,7 @@ class TicketController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ticket = Ticket::findOrFail($id)->delete();
+        return redirect()->route('ticket.index')->with('message', 'Ticket berhasil dihapus!');
     }
 }

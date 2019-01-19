@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class mmodul extends Model
 {
-    protected $table = "mmodul";
+    protected $table = "modul";
 	
 	// Digunakan untuk menggunakan soft delete secara default saat menghapus data
    // use SoftDeletes;

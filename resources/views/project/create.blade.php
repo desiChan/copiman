@@ -40,7 +40,7 @@
 
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-info">Submit</button>
-                                            <a href="{{ route('project.index') }}" class="btn btn-default">Back</a>
+                                            <a href="{{ route('project.index') }}" class="btn btn-danger">Back</a>
                                         </div>
                                     </form>
                             </div>

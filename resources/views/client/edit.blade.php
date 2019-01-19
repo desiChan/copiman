@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-info">Submit</button>
-                                            <a href="{{ route('client.index') }}" class="btn btn-default">Back</a>
+                                            <a href="{{ route('client.index') }}" class="btn btn-danger">Back</a>
                                         </div>
                                     </form>
                            </div>

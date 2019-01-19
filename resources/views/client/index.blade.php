@@ -11,19 +11,21 @@
                                     <div class="overview-wrap">
                                         <h2 class="title-1">Client</h2>
                                     </div>
+                                    <br>
+                                    <a href="{{ url('createclient') }}" class="au-btn au-btn-icon au-btn--green au-btn--small"><i class="zmdi zmdi-plus"></i>add item</a>
                                 </div>
                             </div>
-                                <div class="row">
+                                <div class="row">  
                                     <div class="col-md-12"><br></div>
-                                    <div class="col-md-12"> 
-                                    <a href="{{ url('createclient') }}" class="au-btn au-btn-icon au-btn--green au-btn--small"><i class="zmdi zmdi-plus"></i>add item</a>
+                                    <div class="col-md-11"> 
+                                    
                                     @if ($message = Session::get('message'))
                                             <div class="alert alert-success martop-sm">
                                                 <p>{{ $message }}</p>
                                             </div>
                                         @endif
 
-                                        <table class="table table-hover table-responsive martop-sm">
+                                        <table class="table table-bordered table-striped table-hover table-responsive">
                                             <thead>
                                                 <th>ClientId</th>
                                                 <th>Client Name</th>
@@ -47,7 +49,7 @@
                                                                 {{ csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                 <a href="{{ url('/clientedit') }}&{{ $a->clientid }}" class="zmdi zmdi-edit" data-toggle="tooltip" data-placement="top" title="Edit">&nbsp;&nbsp;</a>
-                                                                <button type="submit" class="zmdi zmdi-delete" data-toggle="tooltip" data-placement="top" title="Delete"></button>
+                                                                <button type="submit" class="zmdi zmdi-delete" data-placement="top" title="Delete"></button>
                                                             </form>
                                                         </td>
                                                     </tr>
